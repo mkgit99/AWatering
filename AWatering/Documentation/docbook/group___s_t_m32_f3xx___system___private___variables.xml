@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_group___s_t_m32_f3xx___system___private___variables" xml:lang="en-US">
+<title>STM32F3xx_System_Private_Variables</title>
+<indexterm><primary>STM32F3xx_System_Private_Variables</primary></indexterm>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_group___s_t_m32_f3xx___system___private___variables_1gaa3cd3e43291e81e795d642b79b6088e6"/>uint32_t <emphasis role="strong">SystemCoreClock</emphasis> = 8000000</para>
+</listitem>
+            <listitem><para><anchor xml:id="_group___s_t_m32_f3xx___system___private___variables_1ga6e1d9cd666f0eacbfde31e9932a93466"/>const uint8_t <emphasis role="strong">AHBPrescTable</emphasis> [16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9}</para>
+</listitem>
+            <listitem><para><anchor xml:id="_group___s_t_m32_f3xx___system___private___variables_1ga5b4f8b768465842cf854a8f993b375e9"/>const uint8_t <emphasis role="strong">APBPrescTable</emphasis> [8] = {0, 0, 0, 0, 1, 2, 3, 4}</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+</section>
+</section>

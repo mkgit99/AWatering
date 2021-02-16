@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_adc_8c" xml:lang="en-US">
+<title>C:/Users/mnich/Desktop/AWatering/Core/Src/adc.c File Reference</title>
+<indexterm><primary>C:/Users/mnich/Desktop/AWatering/Core/Src/adc.c</primary></indexterm>
+<para>
+
+<para>This file provides code for the configuration of the ADC instances. </para>
+ 
+</para>
+<programlisting>#include &quot;adc.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263">MX_ADC2_Init</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_adc_8c_1ac3139540667c403c5dfd37a99c610b1c">HAL_ADC_MspInit</link> (ADC_HandleTypeDef *adcHandle)</para>
+</listitem>
+            <listitem><para>void <link linkend="_adc_8c_1a3f61f2c2af0f122f81a87af8ad7b4360">HAL_ADC_MspDeInit</link> (ADC_HandleTypeDef *adcHandle)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_adc_8c_1acd9221f1aa19aebfe0b744947f2daf49"/>ADC_HandleTypeDef <emphasis role="strong">hadc2</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file provides code for the configuration of the ADC instances. </para>
+
+<para><caution><title>Attention</title>
+
+<para></para>
+</caution>
+<formalpara><title><informaltable frame='none'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>&#169; Copyright (c) 2021 STMicroelectronics. All rights reserved.</entry></row></tbody></tgroup></informaltable></title></formalpara>
+</para>
+
+<para>This software component is licensed by ST under BSD 3-Clause license, the &quot;License&quot;; You may not use this file except in compliance with the License. You may obtain a copy of the License at: opensource.org/licenses/BSD-3-Clause </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_adc_8c_1a3f61f2c2af0f122f81a87af8ad7b4360"/>    <section>
+    <title>HAL_ADC_MspDeInit()</title>
+<indexterm><primary>HAL_ADC_MspDeInit</primary><secondary>adc.c</secondary></indexterm>
+<indexterm><primary>adc.c</primary><secondary>HAL_ADC_MspDeInit</secondary></indexterm>
+<para><computeroutput>void HAL_ADC_MspDeInit (ADC_HandleTypeDef * adcHandle)</computeroutput></para>
+<para>ADC2 GPIO Configuration PA4 ---&#8212;&gt; ADC2_IN1</para>
+    </section><anchor xml:id="_adc_8c_1ac3139540667c403c5dfd37a99c610b1c"/>    <section>
+    <title>HAL_ADC_MspInit()</title>
+<indexterm><primary>HAL_ADC_MspInit</primary><secondary>adc.c</secondary></indexterm>
+<indexterm><primary>adc.c</primary><secondary>HAL_ADC_MspInit</secondary></indexterm>
+<para><computeroutput>void HAL_ADC_MspInit (ADC_HandleTypeDef * adcHandle)</computeroutput></para>
+<para>ADC2 GPIO Configuration PA4 ---&#8212;&gt; ADC2_IN1</para>
+    </section><anchor xml:id="_adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263"/>    <section>
+    <title>MX_ADC2_Init()</title>
+<indexterm><primary>MX_ADC2_Init</primary><secondary>adc.c</secondary></indexterm>
+<indexterm><primary>adc.c</primary><secondary>MX_ADC2_Init</secondary></indexterm>
+<para><computeroutput>void MX_ADC2_Init (void )</computeroutput></para>
+<para>Common config</para>
+
+<para>Configure Regular Channel</para>
+</section>
+</section>
+</section>

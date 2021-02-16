@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_usart_8c" xml:lang="en-US">
+<title>C:/Users/mnich/Desktop/AWatering/Core/Src/usart.c File Reference</title>
+<indexterm><primary>C:/Users/mnich/Desktop/AWatering/Core/Src/usart.c</primary></indexterm>
+<para>
+
+<para>This file provides code for the configuration of the USART instances. </para>
+ 
+</para>
+<programlisting>#include &quot;usart.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_usart_8c_1a052088fe5bb3f807a4b2502e664fd4fd"/>void <emphasis role="strong">MX_USART2_UART_Init</emphasis> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_usart_8c_1a62a25476866998c7aadfb5c0864fa349">HAL_UART_MspInit</link> (UART_HandleTypeDef *uartHandle)</para>
+</listitem>
+            <listitem><para>void <link linkend="_usart_8c_1a94cd2c58add4f2549895a03bf267622e">HAL_UART_MspDeInit</link> (UART_HandleTypeDef *uartHandle)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_usart_8c_1aa9479c261d65eecedd3d9582f7f0f89c"/>UART_HandleTypeDef <emphasis role="strong">huart2</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file provides code for the configuration of the USART instances. </para>
+
+<para><caution><title>Attention</title>
+
+<para></para>
+</caution>
+<formalpara><title><informaltable frame='none'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>&#169; Copyright (c) 2021 STMicroelectronics. All rights reserved.</entry></row></tbody></tgroup></informaltable></title></formalpara>
+</para>
+
+<para>This software component is licensed by ST under BSD 3-Clause license, the &quot;License&quot;; You may not use this file except in compliance with the License. You may obtain a copy of the License at: opensource.org/licenses/BSD-3-Clause </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_usart_8c_1a94cd2c58add4f2549895a03bf267622e"/>    <section>
+    <title>HAL_UART_MspDeInit()</title>
+<indexterm><primary>HAL_UART_MspDeInit</primary><secondary>usart.c</secondary></indexterm>
+<indexterm><primary>usart.c</primary><secondary>HAL_UART_MspDeInit</secondary></indexterm>
+<para><computeroutput>void HAL_UART_MspDeInit (UART_HandleTypeDef * uartHandle)</computeroutput></para>
+<para>USART2 GPIO Configuration PA2 ---&#8212;&gt; USART2_TX PA3 ---&#8212;&gt; USART2_RX</para>
+    </section><anchor xml:id="_usart_8c_1a62a25476866998c7aadfb5c0864fa349"/>    <section>
+    <title>HAL_UART_MspInit()</title>
+<indexterm><primary>HAL_UART_MspInit</primary><secondary>usart.c</secondary></indexterm>
+<indexterm><primary>usart.c</primary><secondary>HAL_UART_MspInit</secondary></indexterm>
+<para><computeroutput>void HAL_UART_MspInit (UART_HandleTypeDef * uartHandle)</computeroutput></para>
+<para>USART2 GPIO Configuration PA2 ---&#8212;&gt; USART2_TX PA3 ---&#8212;&gt; USART2_RX</para>
+</section>
+</section>
+</section>

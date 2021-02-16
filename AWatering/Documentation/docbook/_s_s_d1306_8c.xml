@@ -1,0 +1,649 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__s_s_d1306_8c" xml:lang="en-US">
+<title>C:/Users/mnich/Desktop/AWatering/Core/Src/SSD1306.c File Reference</title>
+<indexterm><primary>C:/Users/mnich/Desktop/AWatering/Core/Src/SSD1306.c</primary></indexterm>
+<para>
+
+<para>This is library for display OLED SSD1306. </para>
+ 
+</para>
+<programlisting>#include &quot;SSD1306.h&quot;
+#include &quot;i2c.h&quot;
+#include &quot;gpio.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1ac2e03903f388a1df1d36283b9e78c55f"/>#define <link linkend="__s_s_d1306_8c_1ac2e03903f388a1df1d36283b9e78c55f">ssd1306_swap</link>(a,  b)     (((a) ^= (b)), ((b) ^= (a)), ((a) ^= (b)))</para>
+
+<para>No-temp-var swap operation. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a9170a6a63da9c7d018e17aff35bf25ad"/>static void <emphasis role="strong">SSD1306_send_com</emphasis> (uint8_t c)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1aedc1bae65a6761a5d9730d0c3b4b7704"/>static uint8_t <emphasis role="strong">platform_write</emphasis> (uint8_t reg, uint8_t *bufp, uint16_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a9f67e18061a191146d1f555673e7bfda"/>static uint8_t <emphasis role="strong">platform_write_dma</emphasis> (uint8_t reg, uint8_t *bufp, uint16_t len)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a259e0dc9ac434e9967cb0bed8f233c71"/>bool <emphasis role="strong">SSD1306_init</emphasis> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1a75d93df166e0c98ea97f11874b7f16e8">SSD1306_draw_pixel</link> (int16_t x, int16_t y, uint16_t color)</para>
+
+<para>Set/clear/invert a single pixel. This is also invoked by the Adafruit_GFX library in generating many higher-level graphics primitives. </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1a22901438b6c495ea39ee5dd2396e1d4a">SSD1306_display_clear</link> (void)</para>
+
+<para>Clear contents of display buffer (set all pixels to off). </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1a2c7a7021a57b0ecb8b3f316926ad2ec6">SSD1306_draw_fast_hline</link> (int16_t x, int16_t y, int16_t w, uint16_t color)</para>
+
+<para>Draw a horizontal line. This is also invoked by the Adafruit_GFX library in generating many higher-level graphics primitives. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a529f07b8d5879010bbaaca8e1636dc4c"/>void <emphasis role="strong">SSD1306_draw_fast_hline_internal</emphasis> (int16_t x, int16_t y, int16_t w, uint16_t color)</para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1a1236b016fd7e63abcb9e3f52b0bef90f">SSD1306_draw_fast_vline</link> (int16_t x, int16_t y, int16_t h, uint16_t color)</para>
+
+<para>Draw a vertical line. This is also invoked by the Adafruit_GFX library in generating many higher-level graphics primitives. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a5d158c164898e606a29bfeee46676568"/>void <emphasis role="strong">SSD1306_draw_fast_vline_internal</emphasis> (int16_t x, int16_t __y, int16_t __h, uint16_t color)</para>
+</listitem>
+            <listitem><para>bool <link linkend="__s_s_d1306_8c_1a3fa675c5dae277828e18870be8272ff5">SSD1306_get_pixel</link> (int16_t x, int16_t y)</para>
+
+<para>Return color of a single pixel in display buffer. </para>
+</listitem>
+            <listitem><para>uint8_t * <link linkend="__s_s_d1306_8c_1a47b99977618de761f70d9a335d0efcc0">SSD1306_get_buffer</link> (void)</para>
+
+<para>Get base address of display buffer for direct reading or writing. </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1ac18f66c4ffc226c72367900cf84a634a">SSD1306_display_repaint</link> (void)</para>
+
+<para>Push data currently in RAM to SSD1306 display. </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1a846f8f787f294aad636b52576e475f13">SSD1306_start_scroll_right</link> (uint8_t start, uint8_t stop)</para>
+
+<para>Activate a right-handed scroll for all or part of the display. </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1ace16d42d439921f185af29710e9112d1">SSD1306_start_scroll_left</link> (uint8_t start, uint8_t stop)</para>
+
+<para>Activate a left-handed scroll for all or part of the display. </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1a9ea113f3efab586835c53c603fa6c913">SSD1306_start_scroll_diagright</link> (uint8_t start, uint8_t stop)</para>
+
+<para>Activate a diagonal scroll for all or part of the display. </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1aa4421bab36eef83a49dcbda22eafc426">SSD1306_start_scroll_diagleft</link> (uint8_t start, uint8_t stop)</para>
+
+<para>Activate alternate diagonal scroll for all or part of the display. </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1a615bdf219164af78b4d21d8d262414a3">SSD1306_stop_scroll</link> (void)</para>
+
+<para>Cease a previously-begun scrolling action. </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1abc7e3e9b56ac74d56d4d8498e87c84b6">SSD1306_display_invert</link> (bool i)</para>
+
+<para>Enable or disable display invert mode (white-on-black vs black-on-white). </para>
+</listitem>
+            <listitem><para>void <link linkend="__s_s_d1306_8c_1ad64d76f030b8e8ad4c4300e5f148dd7d">SSD1306_set_contrast</link> (uint8_t contrast)</para>
+
+<para>Dim the display. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a220618adf114744e65e4756e101ce41d"/>void <emphasis role="strong">SSD1306_set_rotation</emphasis> (uint8_t rot)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a3f170f7426c99753445657784965d971"/>uint8_t <emphasis role="strong">SSD1306_get_rotation</emphasis> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a56ed84df35de10bdb65e72b184309497"/>static uint8_t * <emphasis role="strong">buffer</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__s_s_d1306_8c_1a31ef40b2ca90f868c7d76754d0100c3b"/>static uint8_t <emphasis role="strong">rotation</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This is library for display OLED SSD1306. </para>
+<section xml:id="__s_s_d1306_8c_1dependencies">
+<title>Dependencies</title>
+
+<para>This library depends on <link xlink:href="https://github.com/adafruit/Adafruit-GFX-Library">Adafruit_GFX</link> being present on your system. Please make sure you have installed the latest version before using this library.</para>
+
+<para><formalpara><title>Author</title>
+
+<para></para>
+</formalpara>
+Written by Limor Fried/Ladyada for Adafruit Industries, with contributions from the open source community.</para>
+</section>
+<section xml:id="__s_s_d1306_8c_1license">
+<title>License</title>
+
+<para>BSD license, all text above, and the splash screen included below, must be included in any redistribution. </para>
+</section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__s_s_d1306_8c_1a22901438b6c495ea39ee5dd2396e1d4a"/>    <section>
+    <title>SSD1306_display_clear()</title>
+<indexterm><primary>SSD1306_display_clear</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_display_clear</secondary></indexterm>
+<para><computeroutput>void SSD1306_display_clear (void )</computeroutput></para><para>
+
+<para>Clear contents of display buffer (set all pixels to off). </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>Changes buffer contents only, no immediate effect on display. Follow up with a call to display(), or with other graphics commands as needed by one&apos;s own application. </para>
+</note>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1abc7e3e9b56ac74d56d4d8498e87c84b6"/>    <section>
+    <title>SSD1306_display_invert()</title>
+<indexterm><primary>SSD1306_display_invert</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_display_invert</secondary></indexterm>
+<para><computeroutput>void SSD1306_display_invert (bool i)</computeroutput></para><para>
+
+<para>Enable or disable display invert mode (white-on-black vs black-on-white). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>i</entry>
+                                <entry>
+<para>If true, switch to invert mode (black-on-white), else normal mode (white-on-black). </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>This has an immediate effect on the display, no need to call the display() function &#8211; buffer contents are not changed, rather a different pixel mode of the display hardware is used. When enabled, drawing SSD1306_BLACK (value 0) pixels will actually draw white, SSD1306_WHITE (value 1) will draw black. </para>
+</note>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1ac18f66c4ffc226c72367900cf84a634a"/>    <section>
+    <title>SSD1306_display_repaint()</title>
+<indexterm><primary>SSD1306_display_repaint</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_display_repaint</secondary></indexterm>
+<para><computeroutput>void SSD1306_display_repaint (void )</computeroutput></para><para>
+
+<para>Push data currently in RAM to SSD1306 display. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>Drawing operations are not visible until this function is called. Call after each graphics command, or after a whole set of graphics commands, as best needed by one&apos;s own application. </para>
+</note>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1a2c7a7021a57b0ecb8b3f316926ad2ec6"/>    <section>
+    <title>SSD1306_draw_fast_hline()</title>
+<indexterm><primary>SSD1306_draw_fast_hline</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_draw_fast_hline</secondary></indexterm>
+<para><computeroutput>void SSD1306_draw_fast_hline (int16_t x, int16_t y, int16_t w, uint16_t color)</computeroutput></para><para>
+
+<para>Draw a horizontal line. This is also invoked by the Adafruit_GFX library in generating many higher-level graphics primitives. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>Leftmost column &#8211; 0 at left to (screen width - 1) at right. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>Row of display &#8211; 0 at top to (screen height -1) at bottom. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>w</entry>
+                                <entry>
+<para>Width of line, in pixels. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>color</entry>
+                                <entry>
+<para>Line color, one of: SSD1306_BLACK, SSD1306_WHITE or SSD1306_INVERT. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>Changes buffer contents only, no immediate effect on display. Follow up with a call to display(), or with other graphics commands as needed by one&apos;s own application. </para>
+</note>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1a1236b016fd7e63abcb9e3f52b0bef90f"/>    <section>
+    <title>SSD1306_draw_fast_vline()</title>
+<indexterm><primary>SSD1306_draw_fast_vline</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_draw_fast_vline</secondary></indexterm>
+<para><computeroutput>void SSD1306_draw_fast_vline (int16_t x, int16_t y, int16_t h, uint16_t color)</computeroutput></para><para>
+
+<para>Draw a vertical line. This is also invoked by the Adafruit_GFX library in generating many higher-level graphics primitives. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>Column of display &#8211; 0 at left to (screen width -1) at right. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>Topmost row &#8211; 0 at top to (screen height - 1) at bottom. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>h</entry>
+                                <entry>
+<para>Height of line, in pixels. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>color</entry>
+                                <entry>
+<para>Line color, one of: SSD1306_BLACK, SSD1306_WHITE or SSD1306_INVERT. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>Changes buffer contents only, no immediate effect on display. Follow up with a call to display(), or with other graphics commands as needed by one&apos;s own application. </para>
+</note>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1a75d93df166e0c98ea97f11874b7f16e8"/>    <section>
+    <title>SSD1306_draw_pixel()</title>
+<indexterm><primary>SSD1306_draw_pixel</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_draw_pixel</secondary></indexterm>
+<para><computeroutput>void SSD1306_draw_pixel (int16_t x, int16_t y, uint16_t color)</computeroutput></para><para>
+
+<para>Set/clear/invert a single pixel. This is also invoked by the Adafruit_GFX library in generating many higher-level graphics primitives. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>Column of display &#8211; 0 at left to (screen width - 1) at right. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>Row of display &#8211; 0 at top to (screen height -1) at bottom. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>color</entry>
+                                <entry>
+<para>Pixel color, one of: SSD1306_BLACK, SSD1306_WHITE or SSD1306_INVERT. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>Changes buffer contents only, no immediate effect on display. Follow up with a call to display(), or with other graphics commands as needed by one&apos;s own application. </para>
+</note>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1a47b99977618de761f70d9a335d0efcc0"/>    <section>
+    <title>SSD1306_get_buffer()</title>
+<indexterm><primary>SSD1306_get_buffer</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_get_buffer</secondary></indexterm>
+<para><computeroutput>uint8_t* SSD1306_get_buffer (void )</computeroutput></para><para>
+
+<para>Get base address of display buffer for direct reading or writing. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Pointer to an unsigned 8-bit array, column-major, columns padded to full byte boundary if needed. </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1a3fa675c5dae277828e18870be8272ff5"/>    <section>
+    <title>SSD1306_get_pixel()</title>
+<indexterm><primary>SSD1306_get_pixel</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_get_pixel</secondary></indexterm>
+<para><computeroutput>bool SSD1306_get_pixel (int16_t x, int16_t y)</computeroutput></para><para>
+
+<para>Return color of a single pixel in display buffer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>x</entry>
+                                <entry>
+<para>Column of display &#8211; 0 at left to (screen width - 1) at right. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>y</entry>
+                                <entry>
+<para>Row of display &#8211; 0 at top to (screen height -1) at bottom. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>true if pixel is set (usually SSD1306_WHITE, unless display invert mode is enabled), false if clear (SSD1306_BLACK). </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>Reads from buffer contents; may not reflect current contents of screen if display() has not been called. </para>
+</note>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1ad64d76f030b8e8ad4c4300e5f148dd7d"/>    <section>
+    <title>SSD1306_set_contrast()</title>
+<indexterm><primary>SSD1306_set_contrast</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_set_contrast</secondary></indexterm>
+<para><computeroutput>void SSD1306_set_contrast (uint8_t contrast)</computeroutput></para><para>
+
+<para>Dim the display. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>dim</entry>
+                                <entry>
+<para>true to enable lower brightness mode, false for full brightness. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>This has an immediate effect on the display, no need to call the display() function &#8211; buffer contents are not changed. </para>
+</note>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1aa4421bab36eef83a49dcbda22eafc426"/>    <section>
+    <title>SSD1306_start_scroll_diagleft()</title>
+<indexterm><primary>SSD1306_start_scroll_diagleft</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_start_scroll_diagleft</secondary></indexterm>
+<para><computeroutput>void SSD1306_start_scroll_diagleft (uint8_t start, uint8_t stop)</computeroutput></para><para>
+
+<para>Activate alternate diagonal scroll for all or part of the display. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>start</entry>
+                                <entry>
+<para>First row. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>stop</entry>
+                                <entry>
+<para>Last row. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1a9ea113f3efab586835c53c603fa6c913"/>    <section>
+    <title>SSD1306_start_scroll_diagright()</title>
+<indexterm><primary>SSD1306_start_scroll_diagright</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_start_scroll_diagright</secondary></indexterm>
+<para><computeroutput>void SSD1306_start_scroll_diagright (uint8_t start, uint8_t stop)</computeroutput></para><para>
+
+<para>Activate a diagonal scroll for all or part of the display. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>start</entry>
+                                <entry>
+<para>First row. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>stop</entry>
+                                <entry>
+<para>Last row. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1ace16d42d439921f185af29710e9112d1"/>    <section>
+    <title>SSD1306_start_scroll_left()</title>
+<indexterm><primary>SSD1306_start_scroll_left</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_start_scroll_left</secondary></indexterm>
+<para><computeroutput>void SSD1306_start_scroll_left (uint8_t start, uint8_t stop)</computeroutput></para><para>
+
+<para>Activate a left-handed scroll for all or part of the display. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>start</entry>
+                                <entry>
+<para>First row. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>stop</entry>
+                                <entry>
+<para>Last row. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1a846f8f787f294aad636b52576e475f13"/>    <section>
+    <title>SSD1306_start_scroll_right()</title>
+<indexterm><primary>SSD1306_start_scroll_right</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_start_scroll_right</secondary></indexterm>
+<para><computeroutput>void SSD1306_start_scroll_right (uint8_t start, uint8_t stop)</computeroutput></para><para>
+
+<para>Activate a right-handed scroll for all or part of the display. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters                    </title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+                                <entry>start</entry>
+                                <entry>
+<para>First row. </para>
+</entry>
+                            </row>
+                            <row>
+                                <entry>stop</entry>
+                                <entry>
+<para>Last row. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+</para>
+    </section><anchor xml:id="__s_s_d1306_8c_1a615bdf219164af78b4d21d8d262414a3"/>    <section>
+    <title>SSD1306_stop_scroll()</title>
+<indexterm><primary>SSD1306_stop_scroll</primary><secondary>SSD1306.c</secondary></indexterm>
+<indexterm><primary>SSD1306.c</primary><secondary>SSD1306_stop_scroll</secondary></indexterm>
+<para><computeroutput>void SSD1306_stop_scroll (void )</computeroutput></para><para>
+
+<para>Cease a previously-begun scrolling action. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>None (void). </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>
