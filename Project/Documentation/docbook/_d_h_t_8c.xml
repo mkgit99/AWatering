@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__d_h_t_8c" xml:lang="en-US">
+<title>C:/Users/mnich/Desktop/AWatering/Core/Src/DHT.c File Reference</title>
+<indexterm><primary>C:/Users/mnich/Desktop/AWatering/Core/Src/DHT.c</primary></indexterm>
+<para>
+
+<para>This is the library of DHT11 sensor from github. </para>
+ 
+</para>
+<programlisting>#include &quot;stm32f3xx_hal.h&quot;
+#include &quot;DHT.h&quot;
+</programlisting><simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1ab9eadb7a2e5b802b8c6bbb213218e4bd"/>#define <emphasis role="strong">TYPE_DHT11</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1adf42d52e26184fffc237b7bab4abdea6"/>#define <emphasis role="strong">DHT_PORT</emphasis>   GPIOA</para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a661d236dd49f3aef3a2cf46cf6a1405e"/>#define <emphasis role="strong">DHT_PIN</emphasis>   GPIO_PIN_9</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a4fe08aec7b56318b01ca3ab4172861e3"/>uint32_t <emphasis role="strong">DWT_Delay_Init</emphasis> (void)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a65c8b753e8138acf1e4f09fd2677d779"/>__STATIC_INLINE void <emphasis role="strong">delay</emphasis> (volatile uint32_t microseconds)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1aef1aec2157382676edb25c22e4b7ecef"/>void <emphasis role="strong">Set_Pin_Output</emphasis> (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a3b8cee858a35581caf1bcb14ce5cb367"/>void <emphasis role="strong">Set_Pin_Input</emphasis> (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1ac9b035e01ef84cfc4f7536a8dc4c2600"/>void <emphasis role="strong">DHT_Start</emphasis> (void)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a8430977113c91b3be265deb778d163ab"/>uint8_t <emphasis role="strong">DHT_Check_Response</emphasis> (void)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a20e53d744b103fabc3888fe6312bb17c"/>uint8_t <emphasis role="strong">DHT_Read</emphasis> (void)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a464e04833a3d55c11b343b19e33481bc"/>void <emphasis role="strong">DHT_GetData</emphasis> (DHT_DataTypedef *DHT_Data)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1ad9a2a1c5f490104dc717f5a48b3b8a27"/>uint8_t <emphasis role="strong">Rh_byte1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a2dbbbd8e0fc90796f6389fc31ef811ad"/>uint8_t <emphasis role="strong">Rh_byte2</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a8b0074c25d30592e460b56b9f87d1ba9"/>uint8_t <emphasis role="strong">Temp_byte1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a5544d12933412c17ee41513fa46cac02"/>uint8_t <emphasis role="strong">Temp_byte2</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a4622f107cd73d99fbf4ca91205f3acca"/>uint16_t <emphasis role="strong">SUM</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__d_h_t_8c_1a653c5750f288e99e638bbd607fb885dc"/>uint8_t <emphasis role="strong">Presence</emphasis> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This is the library of DHT11 sensor from github. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Controllerstech.com </para>
+</formalpara>
+</para>
+</section>
+</section>

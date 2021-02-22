@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_i2c_8c" xml:lang="en-US">
+<title>C:/Users/mnich/Desktop/AWatering/Core/Src/i2c.c File Reference</title>
+<indexterm><primary>C:/Users/mnich/Desktop/AWatering/Core/Src/i2c.c</primary></indexterm>
+<para>
+
+<para>This file provides code for the configuration of the I2C instances. </para>
+ 
+</para>
+<programlisting>#include &quot;i2c.h&quot;
+</programlisting><simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_i2c_8c_1ada6e763cfa4108a8d24cd27b75f2f489">MX_I2C1_Init</link> (void)</para>
+</listitem>
+            <listitem><para>void <link linkend="_i2c_8c_1a08b1eb7b7be5b94395127e2a33b1b67e">HAL_I2C_MspInit</link> (I2C_HandleTypeDef *i2cHandle)</para>
+</listitem>
+            <listitem><para>void <link linkend="_i2c_8c_1adaa17249f3d5001ad363c736df31c593">HAL_I2C_MspDeInit</link> (I2C_HandleTypeDef *i2cHandle)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_i2c_8c_1af7b2c26e44dadaaa798a5c3d82914ba7"/>I2C_HandleTypeDef <emphasis role="strong">hi2c1</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_i2c_8c_1ae4780ad74b8c24d6fffa8ec7fc8ea105"/>DMA_HandleTypeDef <emphasis role="strong">hdma_i2c1_tx</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This file provides code for the configuration of the I2C instances. </para>
+
+<para><caution><title>Attention</title>
+
+<para></para>
+</caution>
+<formalpara><title><informaltable frame='none'><tgroup cols='1'><colspec align='center'/><tbody><row><entry align='center'>&#169; Copyright (c) 2021 STMicroelectronics. All rights reserved.</entry></row></tbody></tgroup></informaltable></title></formalpara>
+</para>
+
+<para>This software component is licensed by ST under BSD 3-Clause license, the &quot;License&quot;; You may not use this file except in compliance with the License. You may obtain a copy of the License at: opensource.org/licenses/BSD-3-Clause </para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_i2c_8c_1adaa17249f3d5001ad363c736df31c593"/>    <section>
+    <title>HAL_I2C_MspDeInit()</title>
+<indexterm><primary>HAL_I2C_MspDeInit</primary><secondary>i2c.c</secondary></indexterm>
+<indexterm><primary>i2c.c</primary><secondary>HAL_I2C_MspDeInit</secondary></indexterm>
+<para><computeroutput>void HAL_I2C_MspDeInit (I2C_HandleTypeDef * i2cHandle)</computeroutput></para>
+<para>I2C1 GPIO Configuration PA15 ---&#8212;&gt; I2C1_SCL PB7 ---&#8212;&gt; I2C1_SDA</para>
+    </section><anchor xml:id="_i2c_8c_1a08b1eb7b7be5b94395127e2a33b1b67e"/>    <section>
+    <title>HAL_I2C_MspInit()</title>
+<indexterm><primary>HAL_I2C_MspInit</primary><secondary>i2c.c</secondary></indexterm>
+<indexterm><primary>i2c.c</primary><secondary>HAL_I2C_MspInit</secondary></indexterm>
+<para><computeroutput>void HAL_I2C_MspInit (I2C_HandleTypeDef * i2cHandle)</computeroutput></para>
+<para>I2C1 GPIO Configuration PA15 ---&#8212;&gt; I2C1_SCL PB7 ---&#8212;&gt; I2C1_SDA</para>
+    </section><anchor xml:id="_i2c_8c_1ada6e763cfa4108a8d24cd27b75f2f489"/>    <section>
+    <title>MX_I2C1_Init()</title>
+<indexterm><primary>MX_I2C1_Init</primary><secondary>i2c.c</secondary></indexterm>
+<indexterm><primary>i2c.c</primary><secondary>MX_I2C1_Init</secondary></indexterm>
+<para><computeroutput>void MX_I2C1_Init (void )</computeroutput></para>
+<para>Configure Analogue filter</para>
+
+<para>Configure Digital filter</para>
+</section>
+</section>
+</section>
